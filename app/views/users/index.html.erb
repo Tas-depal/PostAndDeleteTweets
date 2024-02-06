@@ -1,0 +1,6 @@
+<h1>WELCOME</h1>
+<ul class="list-group">
+  <li class="list-group-item"><%= link_to "Add post", new_twitter_path(session[:user_id])%></li>
+  <li class="list-group-item"><%= link_to "Delete posts", delete_path(id: session[:user_id]), method: :post%></li>
+  <li class="list-group-item"><%= link_to "Logout", logout_path(id: session[:user_id]) %></li>
+</ul>

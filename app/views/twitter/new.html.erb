@@ -1,0 +1,18 @@
+<div style="border: 3px solid black; height: 80%; width: 50%; margin-top: 5%; margin-left: 5%">
+  <h1 style="margin: 5% 10% 5% 10%">New Post</h1>
+
+  <%= form_with url: '/twitter', html: { style: "margin-left: 10%; margin-bottom: 10%"}, method: :post do |form| %>
+    <div>
+      <%= form.label :send_a_tweet %><br>
+      <%= form.text_field :send_a_tweet %>
+    </div>
+
+    <div>
+      <%= form.hidden_field :id, value: session[:user_id] %><br>
+    </div>
+
+    <div>
+      <%= form.submit value: 'Post tweet'%>
+    </div>
+  <% end %>
+</div>

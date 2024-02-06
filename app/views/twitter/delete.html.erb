@@ -1,0 +1,18 @@
+<div style="border: 3px solid black; height: 80%; width: 50%; margin-top: 5%; margin-left: 5%">
+  <h1 style="margin: 5% 10% 5% 10%">Delete Post</h1>
+
+  <%= form_with url: '/delete', html: { style: "margin-left: 10%; margin-bottom: 10%"}, method: :post do |form| %>
+    <div>
+      <%= form.label :enter_the_post_id_to_delete %><br>
+      <%= form.text_field :tweet_id %>
+    </div>
+
+    <div>
+      <%= form.hidden_field :id, value: session[:user_id] %><br>
+    </div>
+
+    <div>
+      <%= form.submit value: 'Delete tweet'%>
+    </div>
+  <% end %>
+</div>
